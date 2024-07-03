@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAFE PASTE</title>
+    <!--CDN Link-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <!--CSS-->
+    <link rel="stylesheet" href="pass.css">
+
+    <script>
+        function validatePassword() {
+            var newPassword = document.getElementById("newPassword").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+
+            if (newPassword !== confirmPassword) {
+                alert("The confirm password you entered is incorrect.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+   <div class="card-container">
+    <div class="container">
+        <div class="log-card">
+            <p class="heading">Forgot Password</p>
+
+            <form action="login.html" method="post" onsubmit="return validatePassword()"> 
+                <div class="input-group">
+                    <p class="text">New Password</p>
+                    <input id="newPassword" class="input" type="password" name="password" placeholder="Enter Password" required> 
+                    <p class="text">Confirm Password</p>
+                    <input id="confirmPassword" class="input" type="password" name="password" placeholder="Confirm New Password" required> 
+                </div>
+
+                <button class="btn" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div> 
+</body>
+</html>

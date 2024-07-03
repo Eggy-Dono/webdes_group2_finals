@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAFE PASTE</title>
+    <!--CDN Link-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <!--CSS-->
+    <link rel="stylesheet" href="login.css">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var emailInput = document.getElementById("email");
+            var passwordInput = document.getElementById("password");
+            var rememberMeCheckbox = document.getElementById("rememberMe");
+
+            // Check if email and password are saved in local storage and "Remember Me" is checked
+            if (localStorage.getItem("email") && localStorage.getItem("rememberMe") === "true") {
+                emailInput.value = localStorage.getItem("email");
+                passwordInput.value = localStorage.getItem("password");
+                rememberMeCheckbox.checked = true;
+            }
+
+            // Save email and password to local storage when "Remember Me" is checked
+            rememberMeCheckbox.addEventListener("change", function() {
+                if (rememberMeCheckbox.checked) {
+                    localStorage.setItem("email", emailInput.value);
+                    localStorage.setItem("password", passwordInput.value);
+                    localStorage.setItem("rememberMe", "true");
+                } else {
+                    localStorage.removeItem("email");
+                    localStorage.removeItem("password");
+                    localStorage.removeItem("rememberMe");
+                }
+            });
+        });
+
+        function confirmForgetPassword() {
+            var response = confirm("Are you sure you want to continue forgetting your password?");
+            if (response) {
+                alert("You have chosen to forget your password.");
+                window.location.href = "pass.html";
+            } else {
+                alert("You have chosen not to forget your password.");
+            }
+        }
+    </script>
+</head>
+<body>
+  <form class="form" action="picon.html" onsubmit="return validatePassword()"> 
+   <div class="card-container">
+    <div class="container">
+        <div class="log-card">
+            <p class="heading">Welcome</p>
+            <p>We are happy to serve you!</p>
+
+            <form action="home.html" method="post">
+                <div class="input-group">
+                    <p class="text">Email</p>
+                    <input id="email" class="input" type="email" name="email" placeholder="Enter Email" required>
+                    <p class="text">Password</p>
+                    <input id="password" class="input" type="password" name="password" placeholder="Enter Password" required>
+                </div>
+
+                <div class="password-group">
+                    <div class="checkbox-group">
+                        <input id="rememberMe" type="checkbox">
+                        <label class="label" for="rememberMe">Remember Me</label>
+                    </div>
+                    <a href="#" class="forget-password" onclick="confirmForgetPassword()">Forget Password</a> 
+                </div>
+
+                <button class="btn" type="submit">Sign In</button>
+            </form>
+
+            <p class="no-account">Don't Have an Account ?<a href="signup.html"> Sign Up</a></p>
+        </div>
+    </div>
+</div> 
+</body>
+</html>

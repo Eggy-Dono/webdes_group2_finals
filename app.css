@@ -1,0 +1,51 @@
+body {
+    background-color: #fffbf2;
+    color: #783613;
+    margin: 0;
+    padding: 0;
+    font-family: Gothic Century, sans-serif;
+}
+
+.navbar-brand h1 {
+    color: #783613; 
+
+.download-app-btn {
+    background-color: rgba(120, 54, 19, 0.8);
+    color: #783613; 
+    border: none; 
+    padding: 10px 20px; 
+    border-radius: 20px; 
+    text-decoration: none; 
+    font-weight: bold; 
+}
+
+.download-app-btn:hover {
+    background-color: rgba(120, 54, 19, 0.8);
+    text-decoration: none; /* Ensure no underline on hover */
+}
+
+.content-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.app-info {
+    text-align: center;
+    color: #ffffff;
+}
+
+.app-info h1 {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.app-info p {
+    font-size: 1.5em;
+}
+
+.app-image {
+    max-width: 100%;
+    height: auto;
+}

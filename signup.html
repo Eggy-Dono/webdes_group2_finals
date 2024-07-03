@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAFE PASTE</title>
+    <!--CDN Link-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <!--CSS-->
+    <link rel="stylesheet" href="signup.css">
+
+    <script>
+        function validatePassword() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+
+            if (password !== confirmPassword) {
+                alert("The confirm password you entered is incorrect.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form class="form" action="login.html" onsubmit="return validatePassword()"> 
+        <p class="title">Register</p>
+        <p class="message">Signup now and get full access to our app.</p>
+        <div class="flex">
+            <label>
+                <input id="firstname" class="input" type="text" placeholder="" required>
+                <span>First name</span>
+            </label>
+
+            <label>
+                <input id="lastname" class="input" type="text" placeholder="" required>
+                <span>Last name</span>
+            </label>
+        </div>  
+            
+        <label>
+            <input id="email" class="input" type="email" placeholder="" required>
+            <span>Email</span>
+        </label> 
+        
+        <label>
+            <input id="password" class="input" type="password" placeholder="" required>
+            <span>Password</span>
+        </label>
+        
+        <label>
+            <input id="confirmPassword" class="input" type="password" placeholder="" required>
+            <span>Confirm password</span>
+        </label>
+        
+        <button class="submit" type="submit">Submit</button> 
+    </form>
+</body>
+</html>
